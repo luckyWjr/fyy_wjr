@@ -10,10 +10,10 @@
 
 @interface DateModel : NSObject
 
-@property(nonatomic,assign)NSInteger day;
-@property(nonatomic,assign)NSInteger month;
-@property(nonatomic,assign)NSInteger year;
-@property(nonatomic,assign)NSInteger weekday;
-@property(nonatomic,copy)NSString *lunarDay;
+@property(nonatomic, assign)NSInteger day;
+@property(nonatomic, assign)NSInteger month;
+@property(nonatomic, assign)NSInteger year;
+@property(nonatomic, assign)NSInteger weekday;
+@property(nonatomic, copy)NSString *lunarDay;
 
 @end

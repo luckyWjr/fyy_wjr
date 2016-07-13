@@ -20,7 +20,7 @@
 
 @interface DreamDetailViewController : UIViewController <EditDreamDelegate>
 
-@property (nonatomic, assign) id<DreamChangedDelegate> changedDelegate;
+@property (nonatomic, weak) id<DreamChangedDelegate> changedDelegate;
 
 @property (nonatomic, assign)NSInteger index;
 @property (nonatomic, strong)DreamModel *dreamModel;

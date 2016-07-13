@@ -56,7 +56,7 @@
 /**
  * Delegate for TAPageControl
  */
-@property(nonatomic,assign) id<TAPageControlDelegate> delegate;
+@property(nonatomic, weak) id<TAPageControlDelegate> delegate;
 
 
 /**

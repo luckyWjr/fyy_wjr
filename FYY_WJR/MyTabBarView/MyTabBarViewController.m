@@ -16,7 +16,7 @@
 
 @interface MyTabBarViewController ()
     
-@property(nonatomic, retain) UIImageView* tabBarView;//自定义的覆盖原先的tarbar的控件
+@property(nonatomic, strong) UIImageView* tabBarView;//自定义的覆盖原先的tarbar的控件
     
 @property(nonatomic, weak) TabBarButton* previousBtn;//记录前一次选中的按钮
 

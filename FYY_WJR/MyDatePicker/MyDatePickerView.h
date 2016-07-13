@@ -26,8 +26,8 @@
 
 @interface MyDatePickerView : UIView
 
-@property(nonatomic,retain)UIDatePicker *datePicker;
-@property (nonatomic, assign) id<MyDatePickerViewValueDelegate> dateDelegate;
-@property (nonatomic, assign) id<MyDatePickerViewDelegate> viewDelegate;
+@property(nonatomic, strong)UIDatePicker *datePicker;
+@property (nonatomic, weak) id<MyDatePickerViewValueDelegate> dateDelegate;
+@property (nonatomic, weak) id<MyDatePickerViewDelegate> viewDelegate;
 
 @end

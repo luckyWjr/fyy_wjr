@@ -16,6 +16,6 @@
 -(void)fillDate:(DateModel *)dateModel;
 -(instancetype)initWithFrame:(CGRect)frame isMensesDay:(BOOL)isMensesDay;
 -(void)setDayBg;
-@property(nonatomic,assign)BOOL isMensesDay;
+@property(nonatomic, assign)BOOL isMensesDay;
 
 @end

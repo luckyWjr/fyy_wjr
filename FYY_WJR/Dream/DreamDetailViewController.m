@@ -13,15 +13,15 @@
 
 @interface DreamDetailViewController ()
 
-@property (retain, nonatomic) UIScrollView *detailDreamScrollView;
+@property (strong, nonatomic) UIScrollView *detailDreamScrollView;
 
-@property (retain, nonatomic) UILabel *dreamNameLabel;
-@property (retain, nonatomic) UILabel *dreamIsFinishLabel;
-@property (retain, nonatomic) UILabel *dreamDetailLabel;
-@property (retain, nonatomic) UILabel *dreamDateLabel;
-@property (retain, nonatomic) UILabel *dreamImgLabel;
-@property (retain, nonatomic) UIImageView *dreamImgView;
-@property (retain, nonatomic) UIView *finishView;
+@property (strong, nonatomic) UILabel *dreamNameLabel;
+@property (strong, nonatomic) UILabel *dreamIsFinishLabel;
+@property (strong, nonatomic) UILabel *dreamDetailLabel;
+@property (strong, nonatomic) UILabel *dreamDateLabel;
+@property (strong, nonatomic) UILabel *dreamImgLabel;
+@property (strong, nonatomic) UIImageView *dreamImgView;
+@property (strong, nonatomic) UIView *finishView;
 
 @end
 

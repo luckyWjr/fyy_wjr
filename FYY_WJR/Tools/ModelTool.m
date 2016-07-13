@@ -13,7 +13,7 @@
 @interface ModelTool()
 
 @property(strong, nonatomic) NSMutableArray* modelArr;
-@property(strong, nonatomic) NSString* filePath;
+@property(copy, nonatomic) NSString* filePath;
 
 @end
 

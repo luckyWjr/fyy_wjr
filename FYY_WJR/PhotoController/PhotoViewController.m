@@ -17,12 +17,12 @@
 
 @interface PhotoViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
-@property (nonatomic,strong)UICollectionView * cv;
+@property (nonatomic, strong)UICollectionView * cv;
 
 //图片数组
-@property (nonatomic,strong)NSMutableArray * arr;
-@property (nonatomic,assign)BOOL isup;
-@property (nonatomic,copy)NSString * identifier;
+@property (nonatomic, strong)NSMutableArray * arr;
+@property (nonatomic, assign)BOOL isup;
+@property (nonatomic, copy)NSString * identifier;
 
 @end
 

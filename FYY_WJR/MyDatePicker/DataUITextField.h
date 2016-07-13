@@ -19,6 +19,6 @@
 
 @interface DataUITextField : UITextField <UITextFieldDelegate, MyDatePickerViewValueDelegate>
 
-@property (nonatomic, assign) id<DataUITextFieldDelegate> dateTextViewDelegate;
+@property (nonatomic, weak) id<DataUITextFieldDelegate> dateTextViewDelegate;
 
 @end

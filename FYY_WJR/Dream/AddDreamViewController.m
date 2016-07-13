@@ -19,15 +19,15 @@ static int addBtnFinishHeight = 400;
 
 @interface AddDreamViewController ()
 
-@property (retain, nonatomic) UIView *finishView;
-@property (retain, nonatomic) UITextField *dreamNameTextField;
-@property (retain, nonatomic) UISwitch *dreamIsfinishSwitch;
-@property (retain, nonatomic) UITextField *dreamDetailTextField;
-@property (retain, nonatomic) DataUITextField *dreamDataTextField;
-@property (retain, nonatomic) UIScrollView *addDreamScrollView;
-@property (retain, nonatomic) UIImageView *dreamImageView;
-@property (retain, nonatomic) UIButton *selectPicBtn;
-@property (retain, nonatomic) UIButton *addBtn;
+@property (strong, nonatomic) UIView *finishView;
+@property (strong, nonatomic) UITextField *dreamNameTextField;
+@property (strong, nonatomic) UISwitch *dreamIsfinishSwitch;
+@property (strong, nonatomic) UITextField *dreamDetailTextField;
+@property (strong, nonatomic) DataUITextField *dreamDataTextField;
+@property (strong, nonatomic) UIScrollView *addDreamScrollView;
+@property (strong, nonatomic) UIImageView *dreamImageView;
+@property (strong, nonatomic) UIButton *selectPicBtn;
+@property (strong, nonatomic) UIButton *addBtn;
 
 @property(strong, nonatomic) ModelTool* dreamTool;
 @property(assign, nonatomic) BOOL isSelectImg;

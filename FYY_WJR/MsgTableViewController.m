@@ -190,7 +190,9 @@
 
 - (void)addDiary{
     AddDiaryViewController* addVc = [[AddDiaryViewController alloc] init];
-//    addVc.addDelegate = self;
+    addVc.addNewDiary = ^(DiaryModel* model){
+        NSLog(@"addNewDiary");
+    };
     [self.navigationController pushViewController:addVc animated:YES];
 }
 

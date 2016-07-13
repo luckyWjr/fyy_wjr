@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DiaryModel.h"
 
 @interface AddDiaryViewController : UIViewController
+
+@property (nonatomic,copy) void(^addNewDiary)(DiaryModel* model);
 
 @end

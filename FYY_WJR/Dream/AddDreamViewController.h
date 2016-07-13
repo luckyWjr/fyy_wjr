@@ -28,8 +28,8 @@
 
 @interface AddDreamViewController : UIViewController<UIImagePickerControllerDelegate,UIActionSheetDelegate, UINavigationControllerDelegate, UIAlertViewDelegate,DataUITextFieldDelegate, MyDatePickerViewDelegate>
 
-@property (nonatomic, assign) id<AddDreamDelegate> addDelegate;
-@property (nonatomic, assign) id<EditDreamDelegate> editDelegate;
+@property (nonatomic, weak) id<AddDreamDelegate> addDelegate;
+@property (nonatomic, weak) id<EditDreamDelegate> editDelegate;
 
 @property (nonatomic, assign)NSInteger index;
 @property (nonatomic, strong)DreamModel *dreamModel;

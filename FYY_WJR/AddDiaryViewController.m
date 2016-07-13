@@ -23,13 +23,17 @@
     ImgCollectionView* imgCV;
     UIPlaceHolderTextView* diaryTextView;
     float imgCVRowHeight;
+    UIButton* dateBtn;
+    UIView* contentView;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.title = @"写日记";
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = ColorGray;
+    
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"发表" style:UIBarButtonItemStylePlain target:self action:@selector(addDiary)];
     
     [self setView];
 }
@@ -42,10 +46,13 @@
     int textHeight = 200;
     int selectImgMargin = 20;
     
+    contentView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, DEVICE_WIDTH, 0)];
+    contentView.backgroundColor = [UIColor whiteColor];
+    
     diaryTextView = [[UIPlaceHolderTextView alloc]initWithFrame:CGRectMake(0, 0, DEVICE_WIDTH, textHeight)];
     diaryTextView.placeholder = @"在这里记录下我们美好的事迹吧~";
     diaryTextView.font = [UIFont systemFontOfSize:16];
-    [self.view addSubview:diaryTextView];
+    [contentView addSubview:diaryTextView];
     
     imgArr = [[NSMutableArray alloc]init];
     [imgArr addObject:[UIImage imageNamed:@"addImg"]];
@@ -60,7 +67,18 @@
     addLabel.textColor = [UIColor lightGrayColor];
     [imgCV addSubview:addLabel];
     
-    [self.view addSubview:imgCV];
+    [contentView addSubview:imgCV];
+    
+    dateBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, textHeight + imgCVRowHeight, DEVICE_WIDTH, NavHeight)];
+    [dateBtn setTitle:@"选择日期" forState:UIControlStateNormal];
+    [dateBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    dateBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    dateBtn.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
+    
+//    [contentView addSubview:dateBtn];
+    
+    contentView.height = textHeight + imgCVRowHeight + 10;// + NavHeight;
+    [self.view addSubview:contentView];
 }
 
 - (void)addImg{
@@ -78,6 +96,7 @@
             [arr addObject:[UIImage imageNamed:@"addImg"]];
             int line = (int)(arr.count - 1) / photoCountEachRow + 1;
             imgCV.height = line * imgCVRowHeight;
+            contentView.height += (line - 1) * imgCVRowHeight;
             imgCV.imgArr = arr;
             [imgCV reloadData];
         };
@@ -98,6 +117,11 @@
     [alert addAction: action3];
     
     [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)addDiary{
+    self.addNewDiary(nil);
+    [self.navigationController popViewControllerAnimated:NO];
 }
 
 #pragma mark - 隐藏键盘

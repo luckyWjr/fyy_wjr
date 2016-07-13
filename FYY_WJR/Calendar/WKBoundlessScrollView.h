@@ -27,14 +27,9 @@
 @end
 
 
-
-
-
-
-
 @interface WKBoundlessScrollView : UIScrollView
 
-@property(nonatomic,assign)id<WKBoundlessScrollViewDelegate> delegateForCell;
+@property(nonatomic, weak)id<WKBoundlessScrollViewDelegate> delegateForCell;
 
 -(WKBoundlessScrollViewCell *)dequeueReusableCellWithIdentifier:(NSString *)identifier;
 @end
