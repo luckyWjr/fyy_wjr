@@ -73,17 +73,17 @@
         label.font = [UIFont systemFontOfSize: 12.0];
         
         if(i == 0){
-            label.text = @"端庄";
+            label.text = @"测试";
             
             imgView.image = [UIImage imageNamed:@"sitdown"];
         }
         else if(i == 1){
-            label.text = @"老司机";
+            label.text = @"测试";
             
             imgView.image = [UIImage imageNamed:@"siji"];
         }
         else if(i == 2){
-            label.text = @"宝宝们";
+            label.text = @"测试";
             
             imgView.image = [UIImage imageNamed:@"sons"];
         }
@@ -112,7 +112,7 @@
         model.year = @"2016";
         model.month = @"6";
         model.day = @"1";
-        model.msg = @"\t晚上我们在桂林路碰了面，儿子给了凤爸爸一包棒棒糖当儿童节礼物，祝爸爸永远年轻美丽快乐，然后一起吃了冒菜，价格正好61块唉。吃完以后食量大的惊人的凤爸爸还去买了昨天吃了很好吃的凉皮。";
+        model.msg = @"\t测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试";
         UIFont* msgFont = [UIFont systemFontOfSize:14.0];
         
         NSMutableArray* arr = [[NSMutableArray alloc] init];
@@ -126,28 +126,25 @@
             model.msg = @"\t还是测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试";
         }
         else if(i == 0){
-            [arr addObject:[UIImage imageNamed:@"d0"]];
-            [arr addObject:[UIImage imageNamed:@"d1"]];
+            arr = nil;
         }
         else if(i == 3){
-            [arr addObject:[UIImage imageNamed:@"IMG_6179"]];
-            [arr addObject:[UIImage imageNamed:@"IMG_6168"]];
-            [arr addObject:[UIImage imageNamed:@"index"]];
+            arr = nil;
             model.msg = @"\t还是测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试";
         }
         else if(i == 4){
             [arr addObject:[UIImage imageNamed:@"IMG_6725"]];
             [arr addObject:[UIImage imageNamed:@"IMG_6339"]];
-            [arr addObject:[UIImage imageNamed:@"IMG_6996"]];
-            [arr addObject:[UIImage imageNamed:@"IMG_6813"]];
+            [arr addObject:[UIImage imageNamed:@"IMG_6179"]];
+            [arr addObject:[UIImage imageNamed:@"IMG_7836"]];
             model.msg = @"\t还是测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试";
         }
         else if(i == 5){
-            [arr addObject:[UIImage imageNamed:@"IMG_7402"]];
+            [arr addObject:[UIImage imageNamed:@"IMG_6179"]];
+            [arr addObject:[UIImage imageNamed:@"IMG_6725"]];
             [arr addObject:[UIImage imageNamed:@"IMG_7836"]];
-            [arr addObject:[UIImage imageNamed:@"IMG_7836"]];
-            [arr addObject:[UIImage imageNamed:@"IMG_7092"]];
-            [arr addObject:[UIImage imageNamed:@"IMG_7504"]];
+            [arr addObject:[UIImage imageNamed:@"d0"]];
+            [arr addObject:[UIImage imageNamed:@"IMG_6339"]];
             model.msg = @"\t还是测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试";
         }
         
@@ -155,7 +152,7 @@
         CGSize msgSize = [model.msg boundingRectWithSize:CGSizeMake(DEVICE_WIDTH - yearLabelWidth, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:attribute context:nil].size;
         
         int height;
-        ImgCollectionView* imgCollectionView;
+        ImgCollectionView* imgCollectionView = nil;
         if (arr != nil) {
             imgCollectionView = [[ImgCollectionView alloc] initWithFrame:CGRectMake(yearLabelWidth, listMarginTopAndBottom / 2 + msgSize.height, contentWidth, 0) imgArr:arr isAddList:NO];
             height = msgSize.height + listMarginTopAndBottom + imgCollectionView.height;
@@ -227,7 +224,7 @@
             name = @"情人节";
             detail = @"女生送男生巧克力";
             
-            [festivalArr addObject:[DiaryModel initWithYear:@"2016" Msg:@"\t这一天是年后的第一天上班，我们白天一起上班，晚上一起回了家。然后一起做了些吃的，吃完以后，一起睡觉。"]];
+            [festivalArr addObject:[DiaryModel initWithYear:@"2016" Msg:@"\t测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"]];
         }
             break;
         case 3:
@@ -235,7 +232,7 @@
             name = @"白色情人节";
             detail = @"男生送女生白色巧克力";
             
-            [festivalArr addObject:[DiaryModel initWithYear:@"2016" Msg:@"\t这一天我们一起在美罗城看了《疯狂动物城》的电影，这是我们第一次一起看电影，实现了一百个愿望中的一起看一场电影，这一次是凤爸爸第二次看这部电影。\n\t看电影前我们还吃了鲷鱼烧，爸爸吃的奶油味，儿子吃的红豆味，然后我们就肚子痛了好几天，后面凤爸爸还作死的又吃了一次，抹茶味的。"]];
+            [festivalArr addObject:[DiaryModel initWithYear:@"2016" Msg:@"\t测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"]];
         }
             break;
         case 4:
@@ -243,7 +240,7 @@
             name = @"黑色情人节";
             detail = @"要一起吃炸酱面哦";
             
-            [festivalArr addObject:[DiaryModel initWithYear:@"2016" Msg:@"\t这一天正好是周四，儿子要加班。于是我们用4月15号来弥补，早上凤爸爸陪儿子一起去了医院看皮肤，凤爸爸很讨厌医院的，但还是陪儿子去了，儿子很感动。可惜上午的那家医院是个坑，凤爸爸阻止了儿子。\n\t中午我们在美罗城吃了精悦蓉，吃了一大盘的牛蛙，好好吃。下午一起去了华山医院，行走在绿油油的衡山路，空中还有飘絮，很美。\n\t医院出来后我们去了打浦桥的“王子遇见公主KTV”一起唱歌，爸爸唱了很多周董的歌，还合唱了“今天你要嫁给我”，知道了凤爸爸唱粤语歌是用普通话唱的，还有就是心疼下地板，哎嘿嘿。\n\t晚上在打浦桥找一家炸酱面找了好久好久，不过最后还是找到啦，一起吃了炸酱面。最后我们趁着夜色逛了田子坊。"]];
+            [festivalArr addObject:[DiaryModel initWithYear:@"2016" Msg:@"\t测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试\n\t测试测试测试测试测试测试测试测试\n\t测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"]];
         }
             break;
         case 5:
@@ -251,14 +248,14 @@
             name = @"玫瑰情人节";
             detail = @"男生送女生一束红玫瑰";
             
-            [festivalArr addObject:[DiaryModel initWithYear:@"2016" Msg:@"\t这一天早上儿子去了田林接凤爸爸，然后中午一起吃了老盛昌，下午买了菜然后儿子买了一朵粉色的玫瑰花送给了凤爸爸，路过桥上的时候，凤爸爸拍了玫瑰花和单身狗的照片。\n\t晚上凤爸爸吃了儿子做的黑暗料理，还喝了难喝的崂山蛇草水啊~"]];
+            [festivalArr addObject:[DiaryModel initWithYear:@"2016" Msg:@"\t测试"]];
         }
             break;
         case 6:
         {
             name = @"亲亲情人节";
             detail = @"相互唱各自喜欢的歌";
-            [festivalArr addObject:[DiaryModel initWithYear:@"2016" Msg:@"\t这一天被该死的儿子忘记了，于是第二天弥补了回来，在全家吃了饭然后在桂林公园地铁站亲亲"]];
+            [festivalArr addObject:[DiaryModel initWithYear:@"2016" Msg:@"\t测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"]];
         }
             break;
         case 7:
@@ -399,10 +396,10 @@
 }
 
 - (void)showFoodList{
-    self.title = @"爸爸爱吃的";
+    self.title = @"爱吃的";
     self.dataArray = @[
-                       @{@"type":@"最重要的", @"content":@[@"变态基佬王"]},
-                       @{@"type":@"素菜", @"content":@[@"土豆", @"藕片（凤爸爸的本体）", @"花菜", @"西红柿蛋汤", @"小青菜", @"豆腐"]},
+                       @{@"type":@"最重要的", @"content":@[@"测试"]},
+                       @{@"type":@"素菜", @"content":@[@"土豆", @"藕片", @"花菜", @"西红柿蛋汤", @"小青菜", @"豆腐"]},
                        @{@"type":@"晕菜", @"content":@[@"鸡翅", @"鸡胗", @"三文鱼"]},
                        @{@"type":@"水果", @"content":@[@"草莓", @"小番茄", @"车厘子"]},
                        @{@"type":@"关东煮", @"content":@[@"北极翅", @"海带结"]},
@@ -422,7 +419,7 @@
 }
 
 - (void)showToiletryList{
-    self.title = @"爸爸爱的化妆品";
+    self.title = @"化妆品";
     self.dataArray = @[
                        @{@"index": @"0", @"type":@"YSL", @"content":@[@{@"index": @"0", @"name": @"纯色唇釉", @"other": @"12# 红绯"}]},
                        ];

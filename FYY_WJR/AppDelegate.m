@@ -16,9 +16,7 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     self.window = [[[UIApplication sharedApplication] windows] objectAtIndex:0];
     self.tabBarViewController = [[MyTabBarViewController alloc]init];
     self.window.rootViewController = self.tabBarViewController;

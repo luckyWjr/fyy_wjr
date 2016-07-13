@@ -55,7 +55,7 @@
     MyTableViewGroupModel *group1 = [[MyTableViewGroupModel alloc] init];
     [group1.items addObject:group1_item0];
     [group1.items addObject:group1_item1];
-    group1.header = @"爸爸的最爱";
+    group1.header = @"最爱";
     
     MyDefaultCellModel *group2_item0 =[MyDefaultCellModel itemWithIcon:@"icon1" title:@"大姨妈"];
     MyDefaultCellModel *group2_item1 =[MyDefaultCellModel itemWithIcon:@"icon1" title:@"节日"];
