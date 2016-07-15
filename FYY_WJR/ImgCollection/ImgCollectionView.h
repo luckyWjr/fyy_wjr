@@ -18,7 +18,7 @@
 
 @interface ImgCollectionView : UICollectionView
 
-@property(copy, atomic) NSMutableArray* imgArr;
+@property(nonatomic, strong) NSMutableArray* imgArr;
 @property (nonatomic, weak) id<ImgCollectionViewDelegate> addDelegate;
 
 -(instancetype)initWithFrame:(CGRect)frame imgArr:(NSMutableArray*)imgArr isAddList:(BOOL)is;

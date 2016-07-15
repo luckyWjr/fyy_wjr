@@ -20,7 +20,7 @@
 
 @interface MsgTableViewController ()
 
-@property(nonatomic, strong) NSArray *dataArray;
+@property(nonatomic, copy) NSArray *dataArray;
 
 @end
 
@@ -213,7 +213,7 @@
     
     NSMutableArray* festivalArr = [[NSMutableArray alloc]init];
     
-    date = [NSString stringWithFormat:@"%d月14号", self.index];
+    date = [NSString stringWithFormat:@"%@月14号", @(self.index)];
     switch (self.index) {
         case 1:
         {
@@ -243,6 +243,8 @@
             detail = @"要一起吃炸酱面哦";
             
             [festivalArr addObject:[DiaryModel initWithYear:@"2016" Msg:@"\t测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试\n\t测试测试测试测试测试测试测试测试\n\t测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"]];
+            [festivalArr addObject:[DiaryModel initWithYear:@"2015" Msg:@"\t测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试\n\t测试测试测试测试测试测试测试测试\n\t测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"]];
+            [festivalArr addObject:[DiaryModel initWithYear:@"2014" Msg:@"\t测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试\n\t测试测试测试测试测试测试测试测试\n\t测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"]];
         }
             break;
         case 5:
@@ -324,7 +326,7 @@
     UIView* topView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, DEVICE_WIDTH, topViewHeight)];
     
     UIImageView* imgView = [[UIImageView alloc]initWithFrame:CGRectMake(imgMargin * 2, imgMargin, imgWidth, topViewHeight - 2 * imgMargin)];
-    imgView.image = [UIImage imageNamed:[NSString stringWithFormat:@"loveday_%f", (CGFloat)self.index]];
+    imgView.image = [UIImage imageNamed:[NSString stringWithFormat:@"loveday_%@", @(self.index)]];
     imgView.layer.cornerRadius = DEFAULT_RADIUS;
     imgView.layer.masksToBounds = YES;
     [topView addSubview:imgView];
@@ -360,8 +362,7 @@
     NSInteger yearLabelWidth = 100;
     
     if(festivalArr.count > 0){
-        for(NSInteger i = 0; i < festivalArr.count; i++){
-            DiaryModel* model = [festivalArr objectAtIndex:i];
+        for(DiaryModel* model in festivalArr){
             UIFont* msgFont = [UIFont systemFontOfSize:14.0];
             
             NSDictionary *attribute = @{NSFontAttributeName: msgFont};
@@ -406,14 +407,12 @@
                        @{@"type":@"水果", @"content":@[@"草莓", @"小番茄", @"车厘子"]},
                        @{@"type":@"关东煮", @"content":@[@"北极翅", @"海带结"]},
                        ];
-    for (NSInteger i = 0; i < self.dataArray.count; i++) {
-        NSDictionary* dict = self.dataArray[i];
+    for (NSDictionary* dict in self.dataArray) {
         MyTableViewGroupModel *group = [[MyTableViewGroupModel alloc] init];
         group.header = [dict objectForKey:@"type"];
         
-        NSArray* arr = [dict objectForKey:@"content"];
-        for (NSInteger j = 0; j < arr.count; j++) {
-            MyOnlyTitleCellModel *item = [MyOnlyTitleCellModel itemWithTitle:arr[j]];
+        for (NSString* content in [dict objectForKey:@"content"]) {
+            MyOnlyTitleCellModel *item = [MyOnlyTitleCellModel itemWithTitle:content];
             [group.items addObject:item];
         }
         [self.dataList addObject:group];
@@ -425,15 +424,13 @@
     self.dataArray = @[
                        @{@"index": @"0", @"type":@"YSL", @"content":@[@{@"index": @"0", @"name": @"纯色唇釉", @"other": @"12# 红绯"}]},
                        ];
-    for (NSInteger i = 0; i < self.dataArray.count; i++) {
-        NSDictionary* dict = self.dataArray[i];
+    
+    for (NSDictionary* dict in self.dataArray) {
         MyTableViewGroupModel *group = [[MyTableViewGroupModel alloc] init];
         group.header = [dict objectForKey:@"type"];
         group.index = [dict objectForKey:@"index"];
         
-        NSArray* arr = [dict objectForKey:@"content"];
-        for (NSInteger j = 0; j < arr.count; j++) {
-            NSDictionary* toiletryDict = arr[j];
+        for (NSDictionary* toiletryDict in [dict objectForKey:@"content"]) {
             MyDefaultCellModel *item = [MyDefaultCellModel itemWithTitle:[NSString stringWithFormat:@"%@", [toiletryDict objectForKey:@"name"]]];
             item.subTitle = [NSString stringWithFormat:@"%@", [toiletryDict objectForKey:@"other"]];
             item.index = [toiletryDict objectForKey:@"index"];

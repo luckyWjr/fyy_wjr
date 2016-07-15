@@ -10,10 +10,10 @@
 
 @interface PhotoViewController : UIViewController
 
-@property (nonatomic,copy) void(^popSelectArr)(NSMutableArray* arr);
+@property (nonatomic, copy) void(^popSelectArr)(NSMutableArray* arr);
 
 //所选图片数组
-@property (nonatomic,strong)NSMutableArray* selectArr;
+@property (nonatomic, strong)NSMutableArray* selectArr;
 
 
 @end

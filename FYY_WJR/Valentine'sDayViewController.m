@@ -73,7 +73,7 @@
         [ValentineDayView addTarget:self action:@selector(dayClick:) forControlEvents:UIControlEventTouchDown];
         
         UIImageView* imgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, ValentineDayView.width, imgHeight)];
-        imgView.image = [UIImage imageNamed:[NSString stringWithFormat:@"loveday_%d", i]];
+        imgView.image = [UIImage imageNamed:[NSString stringWithFormat:@"loveday_%@", @(i)]];
         imgView.layer.borderWidth = 0.5;
         imgView.layer.borderColor = [[UIColor grayColor] CGColor];
         [ValentineDayView addSubview:imgView];
@@ -91,7 +91,7 @@
         dateLabel.textAlignment = NSTextAlignmentCenter;
         dateLabel.font = [UIFont systemFontOfSize:10];
         dateLabel.textColor = [UIColor grayColor];
-        dateLabel.text = [NSString stringWithFormat:@"%d月14号", i];
+        dateLabel.text = [NSString stringWithFormat:@"%@月14号", @(i)];
         [ValentineDayView addSubview:dateLabel];
         
         [scrollView addSubview:ValentineDayView];

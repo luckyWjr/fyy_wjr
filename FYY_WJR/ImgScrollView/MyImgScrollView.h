@@ -23,8 +23,8 @@ typedef NS_ENUM(NSInteger, ImgScrollViewDotsAliment) {
 
 @interface MyImgScrollView : UIView
 
-@property (nonatomic, strong) NSArray *imagesGroup;
-@property (nonatomic, strong) NSArray *titlesGroup;
+@property (nonatomic, copy) NSArray *imagesGroup;
+@property (nonatomic, copy) NSArray *titlesGroup;
 @property (nonatomic, assign) CGFloat autoScrollTimeInterval;
 @property (nonatomic, assign) ImgScrollViewDotsAliment dotsAliment;
 @property (nonatomic, weak) id<MyImgScrollViewDelegate> delegate;
