@@ -56,7 +56,7 @@
     NSArray *titleArray = @[@"日",@"一",@"二",@"三",@"四",@"五",@"六"];
     CGFloat width = ([UIScreen mainScreen].bounds.size.width-20)/7;
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 44, [UIScreen mainScreen].bounds.size.width, 20)];
-    for (int i = 0; i < titleArray.count; i++) {
+    for (NSInteger i = 0; i < titleArray.count; i++) {
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(i*width+10, 0, width, 20)];
         label.text = titleArray[i];
         label.font = [UIFont systemFontOfSize:12.0];
@@ -114,7 +114,7 @@
                 [self.dateTool addNewModel:_selectedDateModel];
             }
             else{
-                int i = 0;
+                NSInteger i = 0;
                 for (; i < [self.dateTool getModelArr].count; i++) {
                     DateModel* model = [self.dateTool getModelArr][i];
                     if ((_selectedDateModel.year == model.year) && (_selectedDateModel.month == model.month) && (_selectedDateModel.day == model.day)) {

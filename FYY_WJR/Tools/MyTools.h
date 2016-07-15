@@ -65,7 +65,7 @@
 +(void)saveLocal:(NSString*)key value:(id)obj;
 +(void)removeLocal:(NSString *)key;
 
-+ (UIImage *)scaleImage:(UIImage *)image toScale:(float)scaleSize;
++ (UIImage *)scaleImage:(UIImage *)image toScale:(CGFloat)scaleSize;
 
 +(void)showOneBtnAlertView:(NSString*)msg;
 

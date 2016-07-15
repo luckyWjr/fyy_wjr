@@ -22,7 +22,7 @@
     NSMutableArray* imgArr;
     ImgCollectionView* imgCV;
     UIPlaceHolderTextView* diaryTextView;
-    float imgCVRowHeight;
+    CGFloat imgCVRowHeight;
     UIButton* dateBtn;
     UIView* contentView;
 }
@@ -43,8 +43,8 @@
 }
 
 - (void)setView{
-    int textHeight = 200;
-    int selectImgMargin = 20;
+    NSInteger textHeight = 200;
+    NSInteger selectImgMargin = 20;
     
     contentView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, DEVICE_WIDTH, 0)];
     contentView.backgroundColor = [UIColor whiteColor];
@@ -94,7 +94,7 @@
                 addLabel.hidden = NO;
             }
             [arr addObject:[UIImage imageNamed:@"addImg"]];
-            int line = (int)(arr.count - 1) / photoCountEachRow + 1;
+            NSInteger line = (arr.count - 1) / photoCountEachRow + 1;
             imgCV.height = line * imgCVRowHeight;
             contentView.height += (line - 1) * imgCVRowHeight;
             imgCV.imgArr = arr;

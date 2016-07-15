@@ -18,13 +18,13 @@ typedef NS_ENUM(NSInteger, XYZPhotoState) {
 @interface XYZPhoto : UIView
 
 @property (nonatomic, strong) UIImageView *imageView;
-@property (nonatomic) float speed;
+@property (nonatomic) CGFloat speed;
 @property (nonatomic) CGRect oldFrame;
-@property (nonatomic) float oldSpeed;
-@property (nonatomic) float oldAlpha;
-@property (nonatomic) int state;
+@property (nonatomic) CGFloat oldSpeed;
+@property (nonatomic) CGFloat oldAlpha;
+@property (nonatomic) NSInteger state;
 
 - (void)updateImage:(UIImage *)image;
-- (void)setImageAlphaAndSpeedAndSize:(float)alpha;
+- (void)setImageAlphaAndSpeedAndSize:(CGFloat)alpha;
 
 @end

@@ -36,7 +36,7 @@
     }
     cellDateModel.drawDayRow = row;
     cellDateModel.drawDayBeginIndex = dayBeginIndex;
-    for (int i = 0; i < monthDays; i++) {
+    for (NSInteger i = 0; i < monthDays; i++) {
         DateModel *dateModel = [[DateModel alloc] init];
         dateModel.year = year;
         dateModel.month = month;
@@ -140,7 +140,7 @@
         return 0;
     }
     BOOL isLeapYear = [DateTools isLeapYear:year];
-    int  februaryDay;
+    NSInteger  februaryDay;
     if (isLeapYear) {
         februaryDay = 29;
     }
@@ -194,7 +194,7 @@
     NSDate* inputDate = [inputFormatter dateFromString:string];
     
     NSCalendar *localeCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierChinese];
-    unsigned unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth |  NSCalendarUnitDay;
+    NSInteger unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth |  NSCalendarUnitDay;
     NSDateComponents *localeComp = [localeCalendar components:unitFlags fromDate:inputDate];
     NSString *d_str = [chineseDays objectAtIndex:localeComp.day-1];
     return d_str;

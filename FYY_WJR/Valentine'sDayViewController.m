@@ -28,21 +28,21 @@
 }
 
 - (void)setListView {
-    int margin = 10;
-    int titleMarginTop = 30;
-    int cardHeight = 150;
-    int imgHeight = 120;
-    int textHeight = 15;
-    int scrollHeight = 1200;
-    int titleHeight = 80;
-    int titleLabelHeight = 40;
-    int titleImgHeight = 40;
+    NSInteger margin = 10;
+    NSInteger titleMarginTop = 30;
+    NSInteger cardHeight = 150;
+    NSInteger imgHeight = 120;
+    NSInteger textHeight = 15;
+    NSInteger scrollHeight = 1200;
+    NSInteger titleHeight = 80;
+    NSInteger titleLabelHeight = 40;
+    NSInteger titleImgHeight = 40;
     
     UIScrollView* scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, DEVICE_WIDTH, DEVICE_HEIGHT)];
     scrollView.contentSize = CGSizeMake(DEVICE_WIDTH, scrollHeight);
     [self.view addSubview:scrollView];
     
-    for (int i = 1; i < 15; i++) {
+    for (NSInteger i = 1; i < 15; i++) {
         if (i == 1 || i == 13) {
             UIView* titleView = [[UIView alloc]initWithFrame:CGRectMake(0, (i / 13 + 1) *titleMarginTop + i / 13 * 4 * (cardHeight + margin) + i / 13 * titleHeight, DEVICE_WIDTH, titleHeight)];
             
@@ -151,7 +151,7 @@
 - (void)dayClick:(UIButton*)sender{
     MsgTableViewController* msgVc = [[MsgTableViewController alloc] init];
     msgVc.msgType = MsgTypeFestival;
-    msgVc.index = (int)sender.tag;
+    msgVc.index = (NSInteger)sender.tag;
     [self.navigationController pushViewController:msgVc animated:YES];
 }
 

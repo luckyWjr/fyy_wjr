@@ -20,7 +20,7 @@
 }
 
 - (void)createUI{
-    int btnMargin = 1;
+    NSInteger btnMargin = 1;
     self.iv = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.contentView.frame.size.width, self.contentView.frame.size.height)];
     self.iv.backgroundColor = [UIColor lightGrayColor];
     [self.contentView addSubview:self.iv];

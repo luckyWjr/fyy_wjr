@@ -8,16 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-typedef enum {
+typedef NS_ENUM(NSInteger, BtnCountType) {
     BtnCountTypeOne,
     BtnCountTypeTwo
-} BtnCountType;
+};
 
 @interface MyDefaultPopupViewController : UIViewController
 
 @property (nonatomic, assign) BtnCountType btnType;
-@property (nonatomic, assign) float widthScale;
-@property (nonatomic, assign) float heightScale;
+@property (nonatomic, assign) CGFloat widthScale;
+@property (nonatomic, assign) CGFloat heightScale;
 @property (nonatomic, strong) UIView* contentView;
 
 @end

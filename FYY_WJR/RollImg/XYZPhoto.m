@@ -75,7 +75,7 @@
     self.imageView.image = image;
 }
 
-- (void)setImageAlphaAndSpeedAndSize:(float)alpha {
+- (void)setImageAlphaAndSpeedAndSize:(CGFloat)alpha {
     self.alpha = alpha;
     self.speed = alpha / 10;
     self.transform = CGAffineTransformScale(self.transform, alpha, alpha);
@@ -84,7 +84,7 @@
 - (void)movePhotos {
     self.center = CGPointMake(self.center.x + self.speed, self.center.y);
     if (self.center.x > self.superview.bounds.size.width + self.frame.size.width/2) {
-        self.center = CGPointMake(-self.frame.size.width/2, arc4random()%(int)(self.superview.bounds.size.height - self.bounds.size.height) + self.bounds.size.height/2);
+        self.center = CGPointMake(-self.frame.size.width/2, arc4random()%(NSInteger)(self.superview.bounds.size.height - self.bounds.size.height) + self.bounds.size.height/2);
     }
 }
 @end

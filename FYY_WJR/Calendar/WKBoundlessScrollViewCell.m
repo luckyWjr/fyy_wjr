@@ -58,7 +58,7 @@
     label.textColor = [UIColor redColor];
 //                        label.backgroundColor = [UIColor blueColor];
     [self addSubview:label];
-    for (int i = 0; i < cellDateModel.monthDays; i++) {
+    for (NSInteger i = 0; i < cellDateModel.monthDays; i++) {
         if (i == 0) {
             
         }
@@ -67,7 +67,7 @@
         NSInteger row = (i+cellDateModel.drawDayBeginIndex)/7;
         BOOL isMensesDay = NO;
         
-        for (int i = 0; i < self.modelArr.count; i++) {
+        for (NSInteger i = 0; i < self.modelArr.count; i++) {
             DateModel* model = self.modelArr[i];
             if ((dateModel.year == model.year) && (dateModel.month == model.month) && (dateModel.day == model.day)) {
                 isMensesDay = YES;
@@ -85,7 +85,7 @@
 
 - (void)setThisMonthMensesDay:(CellDateModel *)cellDateModel{
     self.modelArr = [[NSMutableArray alloc]init];
-    for (int i = 0; i < [self.dateTool getModelArr].count; i++) {
+    for (NSInteger i = 0; i < [self.dateTool getModelArr].count; i++) {
         DateModel* model = [self.dateTool getModelArr][i];
         if ((cellDateModel.year == model.year) && (cellDateModel.month == model.month)) {
             [self.modelArr addObject:model];

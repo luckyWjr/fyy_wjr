@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-typedef enum {
+typedef NS_ENUM(NSInteger, ImgScrollViewDotsAliment) {
     ImgScrollViewDotsAlimentRight,
     ImgScrollViewDotsAlimentCenter
-} ImgScrollViewDotsAliment;
+};
 
 @class MyImgScrollView;
 

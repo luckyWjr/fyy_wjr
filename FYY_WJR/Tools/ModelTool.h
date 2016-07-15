@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "DreamModel.h"
 
-typedef enum{
+typedef NS_ENUM(NSInteger, ModelType){
     ModelTypeDream,
     ModelTypeDate
-}ModelType;
+};
 
 @interface ModelTool : NSObject
 

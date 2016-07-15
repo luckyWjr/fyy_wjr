@@ -93,8 +93,8 @@ NSString * const ID = @"ImgCell";
 
 
 - (void)automaticScroll{
-    int currentIndex = _mainView.contentOffset.x / _flowLayout.itemSize.width;
-    int targetIndex = currentIndex + 1;
+    NSInteger currentIndex = _mainView.contentOffset.x / _flowLayout.itemSize.width;
+    NSInteger targetIndex = currentIndex + 1;
     if (targetIndex == _totalItemsCount) {
         targetIndex = _totalItemsCount * 0.5;
         [_mainView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:targetIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
@@ -152,8 +152,8 @@ NSString * const ID = @"ImgCell";
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    int itemIndex = (scrollView.contentOffset.x + self.mainView.width * 0.5) / self.mainView.width;
-    int indexOnPageControl = itemIndex % self.imagesGroup.count;
+    NSInteger itemIndex = (scrollView.contentOffset.x + self.mainView.width * 0.5) / self.mainView.width;
+    NSInteger indexOnPageControl = itemIndex % self.imagesGroup.count;
     _pageControl.currentPage = indexOnPageControl;
 }
 

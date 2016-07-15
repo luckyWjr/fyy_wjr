@@ -14,8 +14,8 @@
 #import "UIView+SDExtension.h"
 #import "MyDatePickerView.h"
 
-static int addBtnDefaultHeight = 300;
-static int addBtnFinishHeight = 400;
+#define addBtnDefaultHeight 300
+#define addBtnFinishHeight 400
 
 @interface AddDreamViewController ()
 
@@ -122,11 +122,11 @@ static int addBtnFinishHeight = 400;
     }
 }
 
--(void) addRowView:(NSString*)text index:(int)index{
-    int rowWidth = HINTLABEL_WIDTH + TEXTFIELD_WIDTH;
-    int textfieldMarginCenter = rowWidth / 2 - HINTLABEL_WIDTH;
-    int marginTop = 100;
-    int finishViewHeight = 300;
+-(void) addRowView:(NSString*)text index:(NSInteger)index{
+    NSInteger rowWidth = HINTLABEL_WIDTH + TEXTFIELD_WIDTH;
+    NSInteger textfieldMarginCenter = rowWidth / 2 - HINTLABEL_WIDTH;
+    NSInteger marginTop = 100;
+    NSInteger finishViewHeight = 300;
     
     UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake((index < 2 ? (DEVICE_WIDTH - rowWidth) / 2 : 0), (index < 2 ? VIEWBOX_DEFAULT_HEIGHT * index + marginTop : VIEWBOX_DEFAULT_HEIGHT * (index - 2)), HINTLABEL_WIDTH, VIEW_DEFAULT_HEIGHT)];
     label.text = text;
@@ -230,7 +230,7 @@ static int addBtnFinishHeight = 400;
         return;
     }
     
-    for (int i = 0; i < [self.dreamTool getModelArr].count; i++) {
+    for (NSInteger i = 0; i < [self.dreamTool getModelArr].count; i++) {
         DreamModel* model = [self.dreamTool getModelArr][i];
         if ([self.dreamNameTextField.text isEqualToString:model.name]) {
             if (self.dreamModel != nil && i == self.index) {
@@ -376,7 +376,7 @@ static int addBtnFinishHeight = 400;
 }
 
 #pragma mark - 弹出框相关
--(void)showOneBtnAlertView:(NSString*)title msg:(NSString*)msg btnText:(NSString*)text tag:(int)tag {
+-(void)showOneBtnAlertView:(NSString*)title msg:(NSString*)msg btnText:(NSString*)text tag:(NSInteger)tag {
     UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:title message:msg delegate:self cancelButtonTitle:text otherButtonTitles:nil];
     alertView.tag = tag;
     [alertView show];

@@ -63,7 +63,7 @@
     [self changeViewController:button];
 }
 
-- (void)creatButtonWithNormalName:(NSString *)normal andSelectName:(NSString *)selected andTitle:(NSString *)title andIndex:(int)index{
+- (void)creatButtonWithNormalName:(NSString *)normal andSelectName:(NSString *)selected andTitle:(NSString *)title andIndex:(NSInteger)index{
     TabBarButton * customButton = [TabBarButton buttonWithType:UIButtonTypeCustom];
     customButton.tag = index;
     

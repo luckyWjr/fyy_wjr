@@ -51,7 +51,7 @@
 }
 
 #pragma mark - 图片处理
-+ (UIImage *)scaleImage:(UIImage *)image toScale:(float)scaleSize{
++ (UIImage *)scaleImage:(UIImage *)image toScale:(CGFloat)scaleSize{
     UIGraphicsBeginImageContext(CGSizeMake(image.size.width * scaleSize, image.size.height * scaleSize));
     [image drawInRect:CGRectMake(0, 0, image.size.width * scaleSize, image.size.height * scaleSize)];
     UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();

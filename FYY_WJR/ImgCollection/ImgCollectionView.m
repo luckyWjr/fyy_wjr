@@ -20,7 +20,7 @@
 @end
 
 @implementation ImgCollectionView{
-    float w, h;
+    CGFloat w, h;
     BOOL isAddList;
 }
 
@@ -50,7 +50,7 @@
     else{
         if (self.imgArr.count == 1) {
             UIImage* img = self.imgArr[0];
-            int imgMaxHeight = 200;
+            NSInteger imgMaxHeight = 200;
             w = self.width;
             if (img.size.width / img.size.height > w / imgMaxHeight) {
                 if (img.size.width < w) {

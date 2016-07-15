@@ -53,13 +53,13 @@
 
     [self setLineLong];
     
-    int topViewHeight = 100;
-    int topImgHeight = 30;
-    int textHeight = 12;
-    int listMarginTopAndBottom = 40;
+    NSInteger topViewHeight = 100;
+    NSInteger topImgHeight = 30;
+    NSInteger textHeight = 12;
+    NSInteger listMarginTopAndBottom = 40;
     
     UIView* topView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, DEVICE_WIDTH, topViewHeight)];
-    for (int i = 0; i < 3; i++) {
+    for (NSInteger i = 0; i < 3; i++) {
         UIButton* btnView = [[UIButton alloc]initWithFrame:CGRectMake(DEVICE_WIDTH / 3 * i, 0, DEVICE_WIDTH / 3, topViewHeight)];
         btnView.tag = i;
         [btnView addTarget:self action:@selector(topClick:) forControlEvents:UIControlEventTouchDown];
@@ -104,10 +104,10 @@
     MyTableViewGroupModel *listGroup = [[MyTableViewGroupModel alloc] init];
     listGroup.header = @"日记";
     
-    int yearLabelWidth = 80;
-    int contentWidth = DEVICE_WIDTH - yearLabelWidth;
+    NSInteger yearLabelWidth = 80;
+    NSInteger contentWidth = DEVICE_WIDTH - yearLabelWidth;
     
-    for(int i = 0; i < 6; i++){
+    for(NSInteger i = 0; i < 6; i++){
         DiaryModel* model = [[DiaryModel alloc]init];
         model.year = @"2016";
         model.month = @"6";
@@ -151,7 +151,7 @@
         NSDictionary *attribute = @{NSFontAttributeName: msgFont};
         CGSize msgSize = [model.msg boundingRectWithSize:CGSizeMake(DEVICE_WIDTH - yearLabelWidth, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:attribute context:nil].size;
         
-        int height;
+        NSInteger height;
         ImgCollectionView* imgCollectionView = nil;
         if (arr != nil) {
             imgCollectionView = [[ImgCollectionView alloc] initWithFrame:CGRectMake(yearLabelWidth, listMarginTopAndBottom / 2 + msgSize.height, contentWidth, 0) imgArr:arr isAddList:NO];
@@ -316,15 +316,15 @@
     
     self.title = name;
     
-    int topViewHeight = 100;
-    int topTextHeight = 50;
-    int imgWidth = 80;
-    int imgMargin = 5;
+    NSInteger topViewHeight = 100;
+    NSInteger topTextHeight = 50;
+    NSInteger imgWidth = 80;
+    NSInteger imgMargin = 5;
     
     UIView* topView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, DEVICE_WIDTH, topViewHeight)];
     
     UIImageView* imgView = [[UIImageView alloc]initWithFrame:CGRectMake(imgMargin * 2, imgMargin, imgWidth, topViewHeight - 2 * imgMargin)];
-    imgView.image = [UIImage imageNamed:[NSString stringWithFormat:@"loveday_%d", self.index]];
+    imgView.image = [UIImage imageNamed:[NSString stringWithFormat:@"loveday_%f", (CGFloat)self.index]];
     imgView.layer.cornerRadius = DEFAULT_RADIUS;
     imgView.layer.masksToBounds = YES;
     [topView addSubview:imgView];
@@ -357,16 +357,16 @@
     MyTableViewGroupModel *listGroup = [[MyTableViewGroupModel alloc] init];
     listGroup.header = @"我们的这一天";
     
-    int yearLabelWidth = 100;
+    NSInteger yearLabelWidth = 100;
     
     if(festivalArr.count > 0){
-        for(int i = 0; i < festivalArr.count; i++){
+        for(NSInteger i = 0; i < festivalArr.count; i++){
             DiaryModel* model = [festivalArr objectAtIndex:i];
             UIFont* msgFont = [UIFont systemFontOfSize:14.0];
             
             NSDictionary *attribute = @{NSFontAttributeName: msgFont};
             CGSize msgSize = [model.msg boundingRectWithSize:CGSizeMake(DEVICE_WIDTH - yearLabelWidth, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:attribute context:nil].size;
-            int height = msgSize.height + 40;
+            NSInteger height = msgSize.height + 40;
             
             UIView* listView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, DEVICE_WIDTH, height)];
             
@@ -406,13 +406,13 @@
                        @{@"type":@"水果", @"content":@[@"草莓", @"小番茄", @"车厘子"]},
                        @{@"type":@"关东煮", @"content":@[@"北极翅", @"海带结"]},
                        ];
-    for (int i = 0; i < self.dataArray.count; i++) {
+    for (NSInteger i = 0; i < self.dataArray.count; i++) {
         NSDictionary* dict = self.dataArray[i];
         MyTableViewGroupModel *group = [[MyTableViewGroupModel alloc] init];
         group.header = [dict objectForKey:@"type"];
         
         NSArray* arr = [dict objectForKey:@"content"];
-        for (int j = 0; j < arr.count; j++) {
+        for (NSInteger j = 0; j < arr.count; j++) {
             MyOnlyTitleCellModel *item = [MyOnlyTitleCellModel itemWithTitle:arr[j]];
             [group.items addObject:item];
         }
@@ -425,14 +425,14 @@
     self.dataArray = @[
                        @{@"index": @"0", @"type":@"YSL", @"content":@[@{@"index": @"0", @"name": @"纯色唇釉", @"other": @"12# 红绯"}]},
                        ];
-    for (int i = 0; i < self.dataArray.count; i++) {
+    for (NSInteger i = 0; i < self.dataArray.count; i++) {
         NSDictionary* dict = self.dataArray[i];
         MyTableViewGroupModel *group = [[MyTableViewGroupModel alloc] init];
         group.header = [dict objectForKey:@"type"];
         group.index = [dict objectForKey:@"index"];
         
         NSArray* arr = [dict objectForKey:@"content"];
-        for (int j = 0; j < arr.count; j++) {
+        for (NSInteger j = 0; j < arr.count; j++) {
             NSDictionary* toiletryDict = arr[j];
             MyDefaultCellModel *item = [MyDefaultCellModel itemWithTitle:[NSString stringWithFormat:@"%@", [toiletryDict objectForKey:@"name"]]];
             item.subTitle = [NSString stringWithFormat:@"%@", [toiletryDict objectForKey:@"other"]];

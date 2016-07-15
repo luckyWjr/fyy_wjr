@@ -12,9 +12,9 @@
  */
 + (UIColor *)colorWithHex:(UInt32)hex andAlpha:(CGFloat)alpha
 {
-    int r = (hex >> 16) & 0xFF;
-	int g = (hex >> 8) & 0xFF;
-	int b = (hex) & 0xFF;
+    NSInteger r = (hex >> 16) & 0xFF;
+	NSInteger g = (hex >> 8) & 0xFF;
+	NSInteger b = (hex) & 0xFF;
     
 	return [UIColor colorWithRed:r / 255.0f
 						   green:g / 255.0f
@@ -52,11 +52,11 @@
         ++s;
     }
     unsigned long long value = strtoll(s, nil, 16);
-    int r, g, b, a;
+    NSInteger r, g, b, a;
     switch (strlen(s)) {
         case 2:
             // xx
-            r = g = b = (int)value;
+            r = g = b = (NSInteger)value;
             a = 255;
             break;
         case 3:

@@ -8,16 +8,16 @@
 
 #import "MyTableViewController.h"
 
-typedef enum {
+typedef NS_ENUM(NSInteger, MsgType) {
     MsgTypeFood,
     MsgTypeToiletry,
     MsgTypeLove,
     MsgTypeFestival,
-} MsgType;
+};
 
 @interface MsgTableViewController : MyTableViewController
 
 @property (nonatomic, assign) MsgType msgType;
-@property (nonatomic, assign) int index;
+@property (nonatomic, assign) NSInteger index;
 
 @end

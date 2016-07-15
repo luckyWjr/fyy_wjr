@@ -84,7 +84,7 @@
 
 #pragma mark ---- cv协议
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    int width = (DEVICE_WIDTH - (photoCountEachRow - 1) * ImgMargin) / photoCountEachRow;
+    NSInteger width = (DEVICE_WIDTH - (photoCountEachRow - 1) * ImgMargin) / photoCountEachRow;
     return CGSizeMake(width, width);
 }
 

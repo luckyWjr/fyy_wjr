@@ -68,15 +68,15 @@
     [self setValues];
 }
 
--(void) addRowView:(NSString*)text index:(int)index{
-    int rowWidth = HINTLABEL_WIDTH + TEXTFIELD_WIDTH;
-    int textfieldMarginCenter = rowWidth / 2 - HINTLABEL_WIDTH;
-    int marginTop = 100;
-    int finishViewHeight = 300;
+-(void) addRowView:(NSString*)text index:(NSInteger)index{
+    NSInteger rowWidth = HINTLABEL_WIDTH + TEXTFIELD_WIDTH;
+    NSInteger textfieldMarginCenter = rowWidth / 2 - HINTLABEL_WIDTH;
+    NSInteger marginTop = 100;
+    NSInteger finishViewHeight = 300;
     
-    int lineNum = 0;
+    NSInteger lineNum = 0;
     if (self.dreamModel.detail.length > 10) {
-        lineNum = (int)self.dreamModel.detail.length / 10;
+        lineNum = (NSInteger)self.dreamModel.detail.length / 10;
     }
     
     UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake((index < 2 ? (DEVICE_WIDTH - rowWidth) / 2 : 0), (index < 2 ? VIEWBOX_DEFAULT_HEIGHT * index + marginTop : VIEWBOX_DEFAULT_HEIGHT * (index - 2)) + (index > 2 ? VIEW_DEFAULT_HEIGHT * lineNum : 0), HINTLABEL_WIDTH, VIEW_DEFAULT_HEIGHT + (index == 2 ? VIEW_DEFAULT_HEIGHT * lineNum : 0))];

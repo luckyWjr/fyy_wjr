@@ -38,17 +38,17 @@
     }
     
     if (photoPaths) {
-        for (int i = 0; i < photoPaths.count; i++) {
-            float X = arc4random()%((int)self.view.bounds.size.width - IMAGEWIDTH);
-            float Y = arc4random()%((int)self.view.bounds.size.height - IMAGEHEIGHT);
-            float W = IMAGEWIDTH;
-            float H = IMAGEHEIGHT;
+        for (NSInteger i = 0; i < photoPaths.count; i++) {
+            CGFloat X = arc4random()%((NSInteger)self.view.bounds.size.width - IMAGEWIDTH);
+            CGFloat Y = arc4random()%((NSInteger)self.view.bounds.size.height - IMAGEHEIGHT);
+            CGFloat W = IMAGEWIDTH;
+            CGFloat H = IMAGEHEIGHT;
                         
             XYZPhoto *photo = [[XYZPhoto alloc]initWithFrame:CGRectMake(X, Y, W, H)];
             [photo updateImage:[UIImage imageWithContentsOfFile:photoPaths[i]]];
             [self.view addSubview:photo];
             
-            float alpha = i*1.0/photoPaths.count + 0.4;
+            CGFloat alpha = i*1.0/photoPaths.count + 0.4;
             [photo setImageAlphaAndSpeedAndSize:alpha];
             
             [self.photos addObject:photo];
@@ -68,11 +68,11 @@
         }
     }
     
-    float W = self.view.bounds.size.width / 3;
-    float H = self.view.bounds.size.height / 3;
+    CGFloat W = self.view.bounds.size.width / 3;
+    CGFloat H = self.view.bounds.size.height / 3;
     
     [UIView animateWithDuration:1 animations:^{
-        for (int i = 0; i < self.photos.count; i++) {
+        for (NSInteger i = 0; i < self.photos.count; i++) {
             XYZPhoto *photo = [self.photos objectAtIndex:i];
             
             if (photo.state == XYZPhotoStateNormal) {
